@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="notFlow" doc:id="49f01e21-5904-4510-92ab-01e0649a1c42" >
+		<http:listener doc:name="Listener" doc:id="f133318f-05c1-4153-8312-62ac07d61b67" config-ref="HTTP_Listener_config" path="/not"/>
+		<logger level="INFO" doc:name="Logger" doc:id="c9445f0f-0f3b-4b95-8b61-46ae9e940aef" />
+		<flow-ref doc:name="Flow Reference" doc:id="bdfc091d-94c9-43db-8c40-be9e1b28ce48" name="not_processlayerFlow"/>
+	</flow>
+</mule>

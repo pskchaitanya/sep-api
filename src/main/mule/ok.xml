@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0b31b76a-1ec4-4945-b27a-8ac278d8dda7" basePath="base-path">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sep-apiFlow" doc:id="429d72ab-3c69-4829-badc-644bbf50a41c" >
+		<http:listener doc:name="Listener" doc:id="8b7db52c-1ad3-4dc6-970b-090e461b0d7c" config-ref="HTTP_Listener_config" path="/ok"/>
+		<logger level="INFO" doc:name="Logger" doc:id="eb325222-a6a8-4c0a-8975-41ee0b241612" message="#[payload]"/>
+		<flow-ref doc:name="Flow Reference" doc:id="3a1a67ea-0d65-4b14-adf4-160fa747fac0" name="ok_processlayerFlow"/>
+	</flow>
+</mule>
