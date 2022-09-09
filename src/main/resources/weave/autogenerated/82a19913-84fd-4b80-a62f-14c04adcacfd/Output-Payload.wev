@@ -1,0 +1,4 @@
+%dw 2.0
+
+type auto_82a19913_84fd_4b80_a62f_14c04adcacfd_Output_Payload = {| message_processlayer: String |}
+

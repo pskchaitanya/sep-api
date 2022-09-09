@@ -4,17 +4,14 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-	<flow name="ok_processlayerFlow" doc:id="527f907c-5606-4032-b6e5-8942e3857dc9" >
-		<ee:transform doc:name="Transform Message" doc:id="f3447023-68be-4b94-bc85-14249d1e6241" >
+	<flow name="ok_systemlayerFlow" doc:id="82a19913-84fd-4b80-a62f-14c04adcacfd" >
+		<ee:transform doc:name="Transform Message" doc:id="787b3c2f-e4af-409a-976a-6fa3275cdf62" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-{
-	"message_processlayer": "ok"
-}]]></ee:set-payload>
+payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<flow-ref doc:name="Flow Reference" doc:id="d65b438e-b418-40e8-b308-112b7875c46e" name="ok_systemlayerFlow"/>
 	</flow>
 </mule>

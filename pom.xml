@@ -29,6 +29,9 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -75,11 +78,11 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
-       <repository>
-         <id>internal.repo</id>
-         <name>Internal repo</name>
-         <url>file:///E:/mulejarfiles</url>
-       </repository>
-   </distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Internal repo</name>
+			<url>file:///E:/mulejarfiles</url>
+		</repository>
+	</distributionManagement>
 
 </project>
